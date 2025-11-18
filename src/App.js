@@ -115,7 +115,6 @@
 
 // export default App;
 
-
 import React, { useEffect, useState, useMemo } from "react";
 import { fetchCompanies } from "./api";
 import Filters from "./components/Filters";
@@ -127,12 +126,9 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  const [filters, setFilters] = useState({
-    search: "",
-    location: "",
-    industry: "",
-    sort: "",
-  });
+  const [search, setSearch] = useState("");
+  const [industry, setIndustry] = useState("");
+  const [location, setLocation] = useState("");
 
   const [page, setPage] = useState(1);
   const perPage = 6;
@@ -149,40 +145,34 @@ function App() {
       });
   }, []);
 
-  const uniqueLocations = useMemo(
-    () => [...new Set(companies.map((c) => c.location))].filter(Boolean),
+  const industries = useMemo(
+    () => [...new Set(companies.map((c) => c.industry))],
     [companies]
   );
 
-  const uniqueIndustries = useMemo(
-    () => [...new Set(companies.map((c) => c.industry))].filter(Boolean),
+  const locations = useMemo(
+    () => [...new Set(companies.map((c) => c.location))],
     [companies]
   );
 
   const filtered = useMemo(() => {
     let result = [...companies];
 
-    if (filters.search) {
-      const s = filters.search.toLowerCase();
+    if (search) {
+      const s = search.toLowerCase();
       result = result.filter((c) => c.name.toLowerCase().includes(s));
     }
 
-    if (filters.location) {
-      result = result.filter((c) => c.location === filters.location);
+    if (location) {
+      result = result.filter((c) => c.location === location);
     }
 
-    if (filters.industry) {
-      result = result.filter((c) => c.industry === filters.industry);
+    if (industry) {
+      result = result.filter((c) => c.industry === industry);
     }
-
-    if (filters.sort === "name_asc")
-      result.sort((a, b) => a.name.localeCompare(b.name));
-
-    if (filters.sort === "name_desc")
-      result.sort((a, b) => b.name.localeCompare(a.name));
 
     return result;
-  }, [companies, filters]);
+  }, [companies, search, industry, location]);
 
   const totalPages = Math.ceil(filtered.length / perPage);
 
@@ -193,7 +183,6 @@ function App() {
 
   return (
     <div className="container mx-auto p-4">
-
       <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-6 rounded-xl shadow-lg mb-8">
         <h1 className="text-3xl font-bold">Companies Directory</h1>
         <p className="text-sm opacity-90 mt-1">
@@ -202,14 +191,20 @@ function App() {
       </div>
 
       <Filters
-        filters={filters}
-        setFilters={setFilters}
-        uniqueLocations={uniqueLocations}
-        uniqueIndustries={uniqueIndustries}
+        search={search}
+        setSearch={setSearch}
+        industry={industry}
+        setIndustry={setIndustry}
+        location={location}
+        setLocation={setLocation}
+        industries={industries}
+        locations={locations}
       />
 
       {loading && <p className="text-center">Loading...</p>}
+
       {error && <p className="text-center text-red-600">{error}</p>}
+
       {!loading && !error && filtered.length === 0 && (
         <p className="text-center">No companies found.</p>
       )}
