@@ -5,7 +5,7 @@
     "location": "Hyderabad, India",
     "industry": "Software",
     "size": "200-500",
-    "website": "https://auroratech.example"
+    "website": "https://aurora.tech"
   },
   {
     "id": 2,
@@ -13,14 +13,102 @@
     "location": "Bangalore, India",
     "industry": "Renewable Energy",
     "size": "50-200",
-    "website": "https://greenworks.example"
+    "website": "https://www.greenworkstools.com"
   },
   {
     "id": 3,
-    "name": "Finix Labs",
+    "name": "Mechfinix Labs",
     "location": "Mumbai, India",
     "industry": "Fintech",
     "size": "1000-3000",
-    "website": "https://finix.example"
+    "website": "https://mechfinixlabs.com"
+  },
+  {
+    "id": 4,
+    "name": "Frontlines Edutech",
+    "location": "Hyderabad, India",
+    "industry": "Education",
+    "size": "200-500",
+    "website": "https://www.frontlinesedutech.com/"
+  },
+  {
+    "id": 5,
+    "name": "Google",
+    "location": "Bangalore, India",
+    "industry": "Technology",
+    "size": "10000+",
+    "website": "https://www.google.com"
+  },
+  {
+    "id": 6,
+    "name": "Microsoft",
+    "location": "Hyderabad, India",
+    "industry": "Technology",
+    "size": "10000+",
+    "website": "https://www.microsoft.com"
+  },
+  {
+    "id": 7,
+    "name": "Amazon",
+    "location": "Hyderabad, India",
+    "industry": "E-commerce",
+    "size": "10000+",
+    "website": "https://www.amazon.com"
+  },
+  {
+    "id": 8,
+    "name": "Accenture",
+    "location": "Bangalore, India",
+    "industry": "Consulting",
+    "size": "10000+",
+    "website": "https://www.accenture.com"
+  },
+  {
+    "id": 9,
+    "name": "Deloitte",
+    "location": "Hyderabad, India",
+    "industry": "Consulting",
+    "size": "10000+",
+    "website": "https://www2.deloitte.com"
+  },
+  {
+    "id": 10,
+    "name": "Infosys",
+    "location": "Mysore, India",
+    "industry": "IT Services",
+    "size": "10000+",
+    "website": "https://www.infosys.com"
+  },
+  {
+    "id": 11,
+    "name": "IBM",
+    "location": "Bangalore, India",
+    "industry": "Technology",
+    "size": "10000+",
+    "website": "https://www.ibm.com"
+  },
+  {
+    "id": 12,
+    "name": "TCS",
+    "location": "Mumbai, India",
+    "industry": "IT Services",
+    "size": "10000+",
+    "website": "https://www.tcs.com"
+  },
+  {
+    "id": 13,
+    "name": "Capgemini",
+    "location": "Pune, India",
+    "industry": "Consulting",
+    "size": "10000+",
+    "website": "https://www.capgemini.com"
+  },
+  {
+    "id": 14,
+    "name": "Cognizant",
+    "location": "Chennai, India",
+    "industry": "IT Services",
+    "size": "10000+",
+    "website": "https://www.cognizant.com"
   }
 ]
