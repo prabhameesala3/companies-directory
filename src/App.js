@@ -82,12 +82,17 @@ function App() {
 
 
 
-      <Filters
-        filters={filters}
-        setFilters={setFilters}
-        uniqueLocations={uniqueLocations}
-        uniqueIndustries={uniqueIndustries}
-      />
+<Filters
+  search={filters.search}
+  setSearch={(v) => setFilters({ ...filters, search: v })}
+  industry={filters.industry}
+  setIndustry={(v) => setFilters({ ...filters, industry: v })}
+  location={filters.location}
+  setLocation={(v) => setFilters({ ...filters, location: v })}
+  industries={uniqueIndustries}
+  locations={uniqueLocations}
+/>
+
 
 
       {loading && <p className="text-center">Loading...</p>}
